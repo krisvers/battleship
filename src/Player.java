@@ -38,7 +38,7 @@ public class Player
 	}
 
 	public void printOpponentGuesses() {
-		System.out.println("badabdaduwadaidwiauhd");
+		System.out.print("  ");
 		for (int c = 0; c < 10; ++c) {
 			System.out.print(c + 1);
 			if (c != 10 - 1) {
@@ -57,6 +57,7 @@ public class Player
 	}
 
 	public void printMyGuesses() {
+		System.out.print("  ");
 		for (int c = 0; c < 10; ++c) {
 			System.out.print(c + 1);
 			if (c != 10 - 1) {
@@ -68,7 +69,7 @@ public class Player
 		for (int r = 0; r < 10; ++r) {
 			System.out.print((char) ('A' + r) + " ");
 			for (int c = 0; c < 10; ++c) {
-				System.out.print(((oppGrid.getStatus(r, c) != Location.UNGUESSED) ? 'X' : '-') + " ");
+				System.out.print(((oppGrid.getStatus(r, c) == Location.HIT) ? 'X' : (oppGrid.getStatus(r, c) == Location.MISSED) ? '+' : '-') + " ");
 			}
 			System.out.print('\n');
 		}

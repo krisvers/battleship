@@ -29,7 +29,7 @@ public class Location
 
 	// Mark this location a miss.
 	public void markMiss() {
-		status = HIT;
+		status = MISSED;
 	}
 
 	// Return whether or not this location has a ship.

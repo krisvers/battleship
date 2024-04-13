@@ -67,6 +67,17 @@ public class Grid
 		return grid[row][col].hasShip();
 	}
 
+	public boolean allSunk() {
+		for (Location[] locations : grid) {
+			for (Location location : locations) {
+				if (location.hasShip() && location.isUnguessed()) {
+					return false;
+				}
+			}
+		}
+
+		return true;
+	}
 
 	// Get the Location object at this row and column position
 	public Location get(int row, int col) {
